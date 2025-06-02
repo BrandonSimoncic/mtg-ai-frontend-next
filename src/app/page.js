@@ -110,9 +110,9 @@ export default function Home() {
             {!showAnswer && !showLoading && (
               <div className="question-section">
                 <h1>
-                  You've yelled JUDGE!
+                  You&apos;ve yelled JUDGE!
                   Ugin Appears:
-                  "Please state your question Planeswalker."
+                  &quot;Please state your question Planeswalker.&quot;
                 </h1>
                 <p>Please use brackets (e.g. [black lotus]) to pull card information.</p>
                 <form 
@@ -170,7 +170,7 @@ export default function Home() {
 
                 <div className="response-grid">
                   <div className="answer-section">
-                    <h3 className="answer-header">Ugin's Response</h3>
+                    <h3 className="answer-header">Ugin&apos;s Response</h3>
                     <div className="searchResults">
                       <ReactMarkdown className="uginAnswer">
                         {uginAnswer.replace(/\\n/g, "\n")}
