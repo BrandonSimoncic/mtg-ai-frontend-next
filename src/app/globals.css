@@ -1,0 +1,381 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font definitions */
+@font-face {
+  font-family: 'GoudyRegular';
+  src: url('/fonts/goudy-medieval/Goudy Mediaeval Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GoudyDemibold';
+  src: url('/fonts/goudy-medieval/Goudy Mediaeval DemiBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Base styles */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 1vmin);
+  color: rgb(17, 12, 12);
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Background styles */
+.background {
+  animation: background-gradient 10s infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  image-rendering: pixelated;
+  background-image: url('/pictures/UgininBlack.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Main container styles */
+.main-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+/* Main content box */
+.black-box {
+  border: 2px solid #000102;
+  border-radius: 10px;
+  padding: clamp(1rem, 3vw, 2rem);
+  font-family: GoudyDemibold;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  white-space: pre-line;
+  background-blend-mode: lighten;
+  width: min(95%, 1200px);
+  margin: auto;
+  background: rgba(124,133,137,0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 2rem);
+  position: relative;
+  z-index: 2;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Question section */
+.question-section {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: clamp(0.5rem, 2vw, 1rem);
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.question-section h1 {
+  font-size: clamp(1.2rem, 4vw, 2.5rem);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.4;
+}
+
+/* Question form styles */
+.question-form {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Answer sections container */
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Response grid styles */
+.response-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+/* Answer container styles */
+.answer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+/* Answer section styles */
+.answer-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(177,179,176,0.9);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 200px;
+}
+
+.answer-header {
+  font-family: GoudyDemibold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #000102;
+  text-align: center;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #1d63e6;
+}
+
+/* Cards container styles */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+/* Card section styles */
+.card-section {
+  background: rgba(177,179,176,0.9);
+  border: 1px solid #1d63e6;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.card-section:last-child {
+  margin-bottom: 0;
+}
+
+.searchResults {
+  background-color: rgba(177,179,176,255);
+  border: 1px solid #1d63e6;
+  border-radius: 5px;
+  text-align: left;
+  font-family: GoudyRegular;
+  padding: 1rem;
+  height: 100%;
+  max-height: 400px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #1d63e6 rgba(177,179,176,255);
+}
+
+.App-input {
+  border: 1px solid #000000;
+  padding: clamp(0.5rem, 2vw, 0.75rem);
+  width: min(95%, 600px);
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(177,179,176,255);
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  margin: clamp(0.5rem, 2vw, 1rem) auto;
+  position: relative;
+  z-index: 4;
+  display: block;
+}
+
+.App-button {
+  background-color: rgba(177,179,176,255);
+  min-height: clamp(2.5rem, 5vw, 3rem);
+  min-width: clamp(6rem, 15vw, 8rem);
+  padding: clamp(0.4rem, 2vw, 0.5rem) clamp(1rem, 3vw, 1.5rem);
+  margin: clamp(0.3rem, 2vw, 0.5rem);
+  border: 1px solid #1d63e6;
+  border-radius: 5px;
+  text-align: center;
+  font-family: GoudyRegular;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.App-button:hover {
+  background-color: rgba(157,159,156,255);
+  transform: translateY(-1px);
+}
+
+.App-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.uginAnswer {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  gap: 1rem;
+}
+
+.loading-frame {
+  position: relative;
+  width: 100px;
+  height: 100px;
+}
+
+.rotating-loader {
+  animation: spin 2s linear infinite;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Error message */
+.error-message {
+  background-color: rgba(255, 0, 0, 0.1);
+  border: 1px solid red;
+  border-radius: 5px;
+  padding: 0.75rem;
+  margin: 1rem 0;
+  color: red;
+  font-family: GoudyRegular;
+  text-align: center;
+}
+
+/* Disclaimer */
+.disclaimer {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 0.5rem;
+    min-height: 100vh;
+  }
+
+  .main-container {
+    padding: 0.5rem;
+    min-height: 100vh;
+  }
+
+  .black-box {
+    width: 95%;
+    max-height: 95vh;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .response-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .searchResults {
+    max-height: 300px;
+  }
+
+  .App-button {
+    width: min(95%, 300px);
+    margin: 0.5rem auto;
+  }
+
+  .question-section {
+    padding: 0.5rem;
+  }
+}
+
+/* Ensure proper scrolling on mobile */
+@media (max-height: 600px) {
+  .App-header {
+    min-height: 100vh;
+    padding: 0.5rem;
+  }
+
+  .main-container {
+    min-height: 100vh;
+    padding: 0.5rem;
+  }
+
+  .black-box {
+    max-height: 95vh;
+    margin: auto;
+  }
+}
+
+/* Ensure content is always visible */
+@media (max-width: 480px) {
+  .black-box {
+    width: 98%;
+    padding: 0.75rem;
+  }
+
+  .main-container {
+    padding: 0.25rem;
+  }
+
+  .App-header {
+    padding: 0.25rem;
+  }
+}
+
+/* Ensure Next.js Image component works with our animations */
+.loading-frame :global(img) {
+  object-fit: contain;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+} 

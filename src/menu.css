@@ -1,0 +1,144 @@
+.menu-style {
+    height: auto;
+    background-color:rgba(177,179,176,255);
+    margin: 5px;  
+    border: 2px solid #000102;
+    font-family: GoudyRegular;
+    border-radius: 5px;
+    text-align: left;
+    padding:1%;
+    /* white-space: wrap; */
+  }
+
+.menu-container {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  font-family: GoudyRegular;
+}
+
+.menu-button {
+  background-color: rgba(177,179,176,255);
+  border: 1px solid #1d63e6;
+  border-radius: 5px;
+  color: #000102;
+  padding: 0.5rem 1rem;
+  min-width: 100px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.menu-button:hover {
+  background-color: rgba(157,159,156,255);
+  transform: translateY(-1px);
+}
+
+.menu-button:focus {
+  outline: 2px solid #1d63e6;
+  outline-offset: 2px;
+}
+
+.menu-content {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 0.5rem;
+  background-color: rgba(177,179,176,255);
+  border: 1px solid #1d63e6;
+  border-radius: 5px;
+  min-width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.menu-item {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #1d63e6;
+  color: #000102;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  text-align: left;
+  transition: background-color 0.2s ease;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: rgba(157,159,156,255);
+}
+
+.menu-item:focus {
+  outline: none;
+  background-color: rgba(157,159,156,255);
+}
+
+/* Popup styling */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+.popup-inner {
+  background: rgba(124,133,137,0.95);
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  border: 2px solid #000102;
+  font-family: GoudyRegular;
+}
+
+.popup-inner h2 {
+  font-family: GoudyDemibold;
+  margin-bottom: 1rem;
+  color: #000102;
+  text-align: center;
+}
+
+.popup-inner p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.Popup-button {
+  background-color: rgba(177,179,176,255);
+  border: 1px solid #1d63e6;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-family: GoudyRegular;
+  color: #000102;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.Popup-button:hover {
+  background-color: rgba(157,159,156,255);
+  transform: translateY(-1px);
+}
+
+.Popup-button:focus {
+  outline: 2px solid #1d63e6;
+  outline-offset: 2px;
+}

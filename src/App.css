@@ -1,0 +1,256 @@
+.background {
+  animation: background-gradient 10s infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  image-rendering: pixelated;
+  background-image: url('./pictures/UgininBlack.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(17, 12, 12);
+  position: relative;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.main-container {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.content-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.black-box {
+  border: 2px solid #000102;
+  border-radius: 10px;
+  padding: clamp(1rem, 3vw, 2rem);
+  font-family: GoudyDemibold;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  white-space: pre-line;
+  background-blend-mode: lighten;
+  width: min(95%, 1200px);
+  margin: auto;
+  background: rgba(124,133,137,0.95);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 2rem);
+  position: relative;
+  z-index: 2;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.texture-color {
+  background: rgba(124,133,137,0.95);
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.question-display {
+  grid-column: 1 / -1;
+  text-align: left;
+  padding: 1rem;
+  background: rgba(177,179,176,0.9);
+  border-radius: 8px;
+}
+
+.answer-section, .cards-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(177,179,176,0.9);
+  border-radius: 8px;
+  padding: 1rem;
+  min-height: 200px;
+}
+
+.App-input {
+  border: 1px solid #000000;
+  padding: 5%;
+  width: 80%;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgba(177,179,176,255);
+  font-size: 1rem;
+}
+
+.App-button {
+  background-color: rgba(177,179,176,255);
+  height: 80px;
+  min-width: 120px;
+  margin: 5px;
+  border: 1px solid #1d63e6;
+  border-radius: 5px;
+  text-align: center;
+  font-family: GoudyRegular;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.App-button:hover {
+  background-color: rgba(157,159,156,255);
+  transform: translateY(-1px);
+}
+
+.App-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Loading Section */
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.loading-frame {
+  width: 100px;
+  height: 100px;
+}
+
+.rotating-loader {
+  animation: rotate 2s linear infinite;
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Search Results */
+.searchResults {
+  height: auto;
+  background-color: rgba(177,179,176,255);
+  margin: 5px;
+  border: 1px solid #1d63e6;
+  border-radius: 5px;
+  text-align: left;
+  font-family: GoudyRegular;
+  padding: 1%;
+  white-space: pre-wrap;
+}
+
+.scroll {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .App-header {
+    padding: 0.5rem;
+  }
+
+  .main-container {
+    padding: 0.5rem;
+  }
+
+  .black-box {
+    width: 95%;
+    max-height: 95vh;
+    margin: auto;
+    padding: 1rem;
+  }
+
+  .content-grid {
+    padding: 0.5rem;
+  }
+
+  .answer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .App-input {
+    width: 95%;
+  }
+
+  .App-button {
+    width: 95%;
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .black-box {
+    width: 98%;
+    padding: 0.75rem;
+  }
+
+  .main-container {
+    padding: 0.25rem;
+  }
+
+  .content-grid {
+    padding: 0.25rem;
+  }
+
+  .App-header {
+    padding: 0.25rem;
+  }
+}
