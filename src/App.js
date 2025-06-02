@@ -106,9 +106,9 @@ function App() {
               {showText && !showAnswer && !showLoading && (
                 <div className="question-section">
                   <h1>
-                    You've yelled JUDGE!
+                    You&apos;ve yelled JUDGE!
                     Ugin Appears:
-                    "Please state your question Planeswalker."
+                    &quot;Please state your question Planeswalker.&quot;
                   </h1>
                   <p>Please use brackets (e.g. [black lotus]) to pull card information.</p>
                   <form 
@@ -159,7 +159,7 @@ function App() {
                   
                   <div className="answer-section">
                     <div className="searchResults">
-                      <p>Ugin States: </p>
+                      <p>Ugin&apos;s States: </p>
                       <ReactMarkdown className="uginAnswer">
                         {uginAnswer.replace(/\\n/g, "\n")}
                       </ReactMarkdown>
