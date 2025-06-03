@@ -31,8 +31,20 @@ export async function GET(request) {
       );
     }
 
+    // Split the authorization header to get both keys
+    const [askuginKey, flyKey] = authHeader.split(' ');
+    if (!askuginKey || !flyKey) {
+      return new Response(
+        JSON.stringify({ error: 'Both API keys are required in Authorization header' }), 
+        { 
+          status: 401,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+    }
+
     // Construct the URL with the question parameter
-    const url = new URL('https://mtg-ai-server.fly.dev/posts/quest');
+    const url = new URL('https://mtg-ai-server.onrender.com/posts/quest');
     // Use decodeURIComponent to ensure we're not double-encoding
     url.searchParams.append('question', decodeURIComponent(question));
 
@@ -42,7 +54,8 @@ export async function GET(request) {
       method: 'GET',
       headers: {
         'Accept': 'application/json',
-        'Authorization': authHeader,
+        'Authorization': askuginKey,
+        'X-Fly-API-Key': flyKey,
         'HTTP-Referer': 'askugin.com',
         'X-Title': 'Ask Ugin'
       }

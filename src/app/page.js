@@ -40,8 +40,9 @@ export default function Home() {
 
   const handleChat = async (userInput) => {
     const key = process.env.NEXT_PUBLIC_ASKUGIN_API_KEY;
-    if (!key) {
-      throw new Error('API key is not configured');
+    const flyKey = process.env.NEXT_PUBLIC_FLY_IO;
+    if (!key || !flyKey) {
+      throw new Error('API keys are not configured');
     }
 
     try {
@@ -59,7 +60,7 @@ export default function Home() {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': key
+          'Authorization': `${key} ${flyKey}`
         }
       });
 
