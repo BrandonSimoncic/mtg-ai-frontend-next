@@ -44,7 +44,7 @@ export async function GET(request) {
     }
 
     // Construct the URL with the question parameter
-    const url = new URL('https://mtg-ai-server.onrender.com/posts/quest');
+    const url = new URL('https://mtg-ai-server.fly.dev/posts/quest');
     // Use decodeURIComponent to ensure we're not double-encoding
     url.searchParams.append('question', decodeURIComponent(question));
 
